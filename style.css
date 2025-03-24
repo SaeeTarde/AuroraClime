@@ -1,0 +1,223 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 1300px;
+  height: 800px;
+  background-image: url("bg.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(1px); /* Adjust the blur intensity */
+  z-index: -1; /* Puts it behind the content */
+}
+
+.container {
+  width: 90%; /* Makes it responsive */
+  max-width: 350px; /* Prevents it from becoming too wide */
+  height: 350px;
+  /* top: 20%; */
+  background-color: #69b3ec;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* Pixelated border effect */
+  box-shadow: 0px 0px 0px 2px #5ebff4, 2px 2px 0px 2px #ddc136,
+    -2px -2px 0px 2px #dc79ed, -2px 2px 0px 2px #e0e685;
+}
+
+.title {
+  width: 215px;
+  height: 20px;
+  font-family: "LXGW WenKai Mono TC";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #107b9f;
+  text-shadow: 0px 4px 4px rgba(11, 7, 7, 0.25);
+}
+
+/* Subtitle */
+.subtitle {
+  height: 25px;
+  font-family: "Love Ya Like A Sister";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 1px;
+  /* identical to box height */
+  text-align: center;
+  color: #ffffff;
+  text-shadow: -1px -1px 0 #107b9f, 1px -1px 0 #107b9f, -1px 1px 0 #107b9f,
+    1px 1px 0 #107b9f; /* Creates an outline effect */
+}
+
+.input-box {
+  /* width: 320px; */
+  /* height: 50px; */
+  position: relative;
+  border: none;
+  margin-top: -10px;
+  background-color: #a4a2a2;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.city-input {
+  width: 200px; /* Adjust based on Figma */
+  height: 22px; /* Adjust based on Figma */
+  border: 1px solid #137cb4;
+  background: #d9d9d9;
+  /* Adjust border color */
+  border-radius: 20px; /*Adjust based on Figma*/
+  padding: 10px;
+  font-size: 13px;
+  outline: none;
+}
+.city-input:focus {
+  border: 2px solid #1589c7;
+  /* Change color on focus */
+}
+
+/* Result Box */
+.result-box {
+  width: 240px;
+  height: 90px;
+  background: rgba(217, 217, 217, 0.4);
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 10px; /* Add some space inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: min-height 0.3s ease; /* Smooth expansion */
+}
+/* Decorative Images */
+.comment1 {
+  position: absolute;
+  /* top: 50%; */
+  margin-top: -30px;
+  right: 100px;
+  width: 160px;
+}
+.hidden {
+  display: none; /* This will hide the element */
+}
+.cat {
+  position: absolute;
+  right: -80px;
+  width: 220px;
+  top: 200px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.flowers1 {
+  position: absolute;
+  top: -50px;
+  left: -75px;
+  width: 180px;
+  transform: rotate(-30deg);
+}
+.flowers2 {
+  position: absolute;
+  top: -50px;
+  right: -75px;
+  width: 180px;
+  transform: rotate(30deg) scaleX(-1);
+}
+.flowers1,
+.flowers2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.flowers1:hover,
+.flowers2:hover {
+  animation: shake 0.5s infinite alternate ease-in-out;
+}
+
+.flowers1:hover {
+  animation: shake1 0.5s infinite alternate ease-in-out;
+}
+
+.flowers2:hover {
+  animation: shake2 0.5s infinite alternate ease-in-out;
+}
+@keyframes shake1 {
+  0% {
+    transform: rotate(-35deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes shake2 {
+  0% {
+    transform: rotate(35deg) scaleX(-1);
+  }
+  100% {
+    transform: rotate(25deg) scaleX(-1);
+  }
+}
+#weather-info {
+  color: rgb(17, 116, 202);
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+  margin-top: 35px;
+  font-family: "LXGW WenKai Mono TC";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  z-index: 10;
+}
+
+#error-message {
+  color: #d20722;
+  margin-top: 20px;
+}
+
+#get-weather-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 50px;
+  padding: 3px;
+  transform: translateY(-50%);
+  border: 2px solid #107b9f;
+  border-radius: 10px;
+  background: rgb(130, 214, 242);
+  cursor: pointer;
+  font-size: 15px;
+  color: rgb(19, 103, 207);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+#description {
+  margin-top: 40px;
+  margin-right: 20px;
+}
+
+#get-weather-btn:hover {
+  background: rgb(93, 194, 227);
+  transition: ease-in-out 500ms;
+  transition: ease-out 500ms;
+}
+/* Output_weather */

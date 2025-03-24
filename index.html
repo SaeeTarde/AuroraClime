@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container wavy-border">
+      <h1 class="title">WEATHER</h1>
+      <h2 class="subtitle">ENTER CITY</h2>
+      <div class="input-box">
+        <input type="text" class="city-input" placeholder="ENTER CITY NAME" />
+        <button id="get-weather-btn">Go</button>
+      </div>
+      <div class="result-box">
+        <div id="weather-info" class="hidden">
+          <p id="temperature"></p>
+          <p id="humidity"></p>
+          <p style="font-family: monospace" id="description"></p>
+        </div>
+        <p
+          id="error-message"
+          class="hidden"
+          style="font-size: larger; margin-bottom: 45px"
+        >
+          Incorrect city-name!
+        </p>
+      </div>
+      <div class="decorations">
+        <img src="Comment.png" class="comment1" alt="Comment" />
+        <img src="cat.png" class="cat" alt="Decorative cat" />
+        <img src="Cloud.png" class="flowers1" alt="Decorative flowers" />
+        <img src="Cloud.png" class="flowers2" alt="Decorative flowers" />
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
